@@ -14,7 +14,7 @@ CREATE TABLE users
 );
 
 -- table to store networking meetups that users post
-CREATE TABLE posted_meetups
+CREATE TABLE events
 (
 	id int NOT NULL AUTO_INCREMENT,
 	event_date DATE NOT NULL,
