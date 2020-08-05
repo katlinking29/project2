@@ -33,5 +33,5 @@ CREATE TABLE event_attendees
     email varchar(100) NOT NULL,
     event_id int NOT NULL,
 	PRIMARY KEY (id),
-	FOREIGN KEY (event_id) REFERENCES posted_meetups(id)
+	FOREIGN KEY (event_id) REFERENCES events(id)
 );
