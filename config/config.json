@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Queens0723",
+    "password": "KPOctober@3",
     "database": "helloWorld_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

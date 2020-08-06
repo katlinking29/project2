@@ -18,7 +18,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/users");
     }
-    res.render(path.join(__dirname, "../views/partials/login.handlebars"));
+    res.render(path.join(__dirname, "../views/partials/dashboard.handlebars"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
