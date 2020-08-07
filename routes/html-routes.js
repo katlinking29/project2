@@ -10,7 +10,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/users");
     }
-    res.render(path.join(__dirname, "../views/partials/login.handlebars"));
+    res.render(path.join(__dirname, "../views/login.handlebars"));
   });
 
   app.get("/login", (req, res) => {
@@ -18,20 +18,20 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/users");
     }
-    res.render(path.join(__dirname, "../views/partials/login.handlebars"));
+    res.render(path.join(__dirname, "../views/login.handlebars"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/users", isAuthenticated, (req, res) => {
-    res.render(path.join(__dirname, "../views/partials/dashboard.handlebars"));
+  app.get("/dashboard", (req, res) => {
+    res.render(path.join(__dirname, "../views/dashboard.handlebars"));
   });
 
   app.get("/events", (req, res) => {
-    res.render(path.join(__dirname, "../views/partials/events.handlebars"));
+    res.render(path.join(__dirname, "../views/events.handlebars"));
   });
 
   app.get("/resources", (req, res) => {
-    res.render(path.join(__dirname, "../views/partials/resources.handlebars"));
+    res.render(path.join(__dirname, "../views/resources.handlebars"));
   });
 };
