@@ -59,7 +59,7 @@
                 </label>
                 <input
                         class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="grid-first-name" type="text" placeholder="Reactive System">
+                        id="grid-first-name event-name" type="text" placeholder="Reactive System" name="name">
               </div>
               <div class="w-full md:w-1/2 px-3">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
@@ -67,7 +67,7 @@
                 </label>
                 <input
                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-last-name" placeholder="yyyy-mm-dd" type="date">
+                        id="grid-last-name event-date" placeholder="yyyy-mm-dd" type="date" name="date">
               </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-2">
@@ -77,7 +77,7 @@
                 </label>
                 <input
                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-city" type="text" placeholder="Charlotte">
+                        id="grid-city event-city" type="text" placeholder="Charlotte" name="city">
               </div>
               <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
@@ -86,7 +86,8 @@
                 <div class="relative">
                   <select
                           class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                          id="grid-state">
+                          id="grid-state event-state"
+                          name="state">
                     <option>North Carolina</option>
                     <option>Missouri</option>
                     <option>Texas</option>
@@ -104,11 +105,11 @@
                 </label>
                 <input
                         class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-zip" type="text" placeholder="90210">
+                        id="grid-zip event-zip" type="text" placeholder="90210" name="zip">
               </div>
             </div>
             <button
-                    class="transform motion-reduce:transform-none hover:-translate-y-1 hover:scale-110 transition ease-in-out duration-300 bg-orange-300 text-white font-bold py-2 px-4 rounded-full mt-12 flex justify-content-center mx-auto">
+                    class="create-event transform motion-reduce:transform-none hover:-translate-y-1 hover:scale-110 transition ease-in-out duration-300 bg-orange-300 text-white font-bold py-2 px-4 rounded-full mt-12 flex justify-content-center mx-auto">
               Create
             </button>
           </form>
