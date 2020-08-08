@@ -32,7 +32,7 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/users", isAuthenticated, (req, res) => {
-    res.render(path.join(__dirname, "../views/dashboard.handlebars"));
+    res.render("dashboard", {name: req.user.email});
   });
 
   app.get("/events", (req, res) => {
