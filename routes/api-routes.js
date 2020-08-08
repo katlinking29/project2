@@ -6,12 +6,13 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), (req, res) => {
-    // Sending back a password, even a hashed password, isn't a good idea
-    res.json({
-      email: req.users.email,
-      id: req.users.id
-    });
+  
+  app.post("/api/login", passport.authenticate("local", {
+    failureRedirect: '/'
+  }), (req, res) => {
+
+    res.redirect("/users");
+    
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -23,7 +24,7 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(() => {
-        res.redirect(307, "/api/login");
+        res.redirect("/login");
       })
       .catch(err => {
         res.status(401).json(err);

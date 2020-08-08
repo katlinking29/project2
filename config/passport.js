@@ -25,6 +25,7 @@ passport.use(
         }
         // If there is a user with the given email, but the password the user gives us is incorrect
         else if (!dbUser.validPassword(password)) {
+          
           return done(null, false, {
             message: "Incorrect password."
           });

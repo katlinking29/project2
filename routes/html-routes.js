@@ -8,7 +8,7 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // directs the user to the login page
     if (req.user) {
-      res.redirect("/users");
+      res.redirect("/login");
     }
     res.render(path.join(__dirname, "../views/login.handlebars"));
   });
@@ -16,14 +16,22 @@ module.exports = function(app) {
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/users");
+      res.redirect("/");
     }
     res.render(path.join(__dirname, "../views/login.handlebars"));
   });
 
+  app.get("/signup", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/login");
+    }
+    res.render(path.join(__dirname, "../views/signup.handlebars"));
+  });
+
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/dashboard", (req, res) => {
+  app.get("/users", isAuthenticated, (req, res) => {
     res.render(path.join(__dirname, "../views/dashboard.handlebars"));
   });
 
