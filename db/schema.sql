@@ -1,6 +1,12 @@
+
+### Schema
+
+DROP DATABASE IF EXISTS helloWorld_db;
+
 CREATE DATABASE helloWorld_db;
 
 USE helloWorld_db;
+
 
 -- table to store user data
 CREATE TABLE users
@@ -75,3 +81,4 @@ CREATE TABLE books
     PRIMARY KEY (id),
     FOREIGN KEY (language_id) REFERENCES languages(id)
 );
+
