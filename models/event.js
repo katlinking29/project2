@@ -1,11 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
-    var Event = sequelize.define("events", {
-      event_date: DataTypes.DATE,
-      event_time: DataTypes.TIME,
-      event_name: DataTypes.STRING,
-      event_location: DataTypes.STRING,
-      event_description: DataTypes.STRING
-    });
-    return Event;
-  };
-  
+  const Event = sequelize.define("events", {
+    event_name: DataTypes.STRING,
+    event_date: DataTypes.STRING,
+    event_city: DataTypes.STRING,
+    event_state: DataTypes.STRING,
+    event_zip: DataTypes.STRING
+  });
+  return Event;
+};
