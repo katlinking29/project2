@@ -1,3 +1,4 @@
+USE helloWorld_db
 
 INSERT INTO users (email, password) VALUES ('jess@gmail.com', "admin");
 INSERT INTO users (email, password) VALUES ('kyle@gmail.com', "admin");
