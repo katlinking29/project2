@@ -6,13 +6,13 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  
+
   app.post("/api/login", passport.authenticate("local", {
     failureRedirect: '/'
   }), (req, res) => {
 
     res.redirect("/users");
-    
+
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -30,7 +30,7 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-  
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
