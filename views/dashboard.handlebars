@@ -44,13 +44,13 @@
           <p class="font-semibold mb-1 text-gray-800 text-sm mt-5">NEXT COURSE</p>
         </div>
       </main>
-      
+
       <!-- Interaction area -->
       <div class="forms flex flex-wrap justify-center px-6">
         <div class="lg:w-1/2 w-full p-6 bg-white rounded shadow-lg select-none overflow-hidden hover:shadow-2xl mt-8">
           <h2 class="text-gray-700 font-bold text-xl mb-12">Create an event</h2>
-          
-          
+
+
           <form class="w-full max-w-lg" action="/api/events" method="POST">
             <div class="flex flex-wrap -mx-3 mb-6">
               <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -113,7 +113,7 @@
               Create
             </button>
           </form>
-          
+
           <div class="mt-5 text-right">
             <a class="font-semibold mb-1 text-orange text-sm" href="">SHOW ALL</a>
           </div>
@@ -147,7 +147,7 @@
     </div>
     <!-- Right menu -->
 
-    {{> side-bar }}
+    {{> side-bar user = name }}
 
   </div>
 </main>
