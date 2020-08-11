@@ -35,11 +35,11 @@ module.exports = function(app) {
     res.render("dashboard", {name: req.user.email});
   });
 
-  // app.get("/events", (req, res) => {
-  //   res.render(path.join(__dirname, "../views/events.handlebars"));
-  // });
+  app.get("/events", (req, res) => {
+    res.render("events", {name: req.user.email});
+  });
 
   app.get("/resources", (req, res) => {
-    res.render(path.join(__dirname, "../views/resources.handlebars"));
+    res.render("resources", {name: req.user.email});
   });
 };

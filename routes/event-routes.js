@@ -30,6 +30,7 @@ module.exports = function(app) {
       state: req.body.state,
       zip: req.body.zip
     }).then(dbEvent => {
+      res.redirect("/users");
       res.json(dbEvent);
     });
   });
@@ -42,17 +43,6 @@ module.exports = function(app) {
     };
     res.render("events", { handlebarsObject });
   });
-
-  // app.get("/events", function(req, res) {
-  //   db.Events.selectAll(function(name, date) {
-  //     let handlebarsObject = {
-  //       eventName: name, 
-  //       eventDate: date
-  //     };
-  //     res.render("events", handlebarsObject);
-  //   });
-  // });
-  
 
   app.delete("/api/events/:id", (req, res) => {
     // Delete the event with the id available to us in req.params.id
