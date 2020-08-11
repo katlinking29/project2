@@ -36,10 +36,10 @@ module.exports = function(app) {
   });
 
   app.get("/events", (req, res) => {
-    res.render(path.join(__dirname, "../views/events.handlebars"));
+    res.render("events", {name: req.user.email});
   });
 
   app.get("/resources", (req, res) => {
-    res.render(path.join(__dirname, "../views/resources.handlebars"));
+    res.render("resources", {name: req.user.email});
   });
 };

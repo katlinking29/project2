@@ -29,18 +29,19 @@ module.exports = function(app) {
       state: req.body.state,
       zip: req.body.zip
     }).then(dbEvent => {
+      res.redirect("/users");
       res.json(dbEvent);
     });
   });
 
-  // app.delete("/api/events/:id", (req, res) => {
-  //   // Delete the event with the id available to us in req.params.id
-  //   db.Event.destroy({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(dbEvent => {
-  //     res.json(dbEvent);
-  //   });
-  // });
+  app.delete("/api/events/:id", (req, res) => {
+    // Delete the event with the id available to us in req.params.id
+    db.Event.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbEvent => {
+      res.json(dbEvent);
+    });
+  });
 };
