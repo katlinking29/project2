@@ -16,30 +16,5 @@ $("#languagesSrc").click(function (event) {
     default:
       languageId = 4;
   }
-
-  getVideos();
-  getBooks();
-  getCourses();
+  window.location.replace("/resources/" + languageId);
 });
-
-function getVideos () {
-  $.get("/api/video/" + languageId)
-    .then(response => {
-      console.log(response);
-      window.location.replace("/resources");
-    });
-}
-
-function getBooks () {
-  $.get("/api/book/" + languageId)
-    .then(response => {
-      console.log(response);
-    });
-}
-
-function getCourses () {
-  $.get("/api/course/" + languageId)
-    .then(response => {
-      console.log(response);
-    });
-}

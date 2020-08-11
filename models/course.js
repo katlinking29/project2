@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const Course = sequelize.define("Course", {
+  const Course = sequelize.define("course", {
     course_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -20,7 +20,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Course.associate = function (models) {
 
-    Course.belongsTo(models.Language, {
+    Course.belongsTo(models.language, {
       foreignKey: {
         allowNull: false
       }

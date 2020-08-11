@@ -1,11 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
-  const Language = sequelize.define("Language", {
+  const Language = sequelize.define("language", {
     language_name: DataTypes.STRING
   });
 
   Language.associate = function (models) {
 
-    Language.hasMany(models.Video, {
+    Language.hasMany(models.video, {
       onDelete: "cascade"
     });
   };

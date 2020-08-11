@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const Video = sequelize.define("Video", {
+  const Video = sequelize.define("video", {
     video_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Video.associate = function (models) {
 
-    Video.belongsTo(models.Language, {
+    Video.belongsTo(models.language, {
       foreignKey: {
         allowNull: false
       }

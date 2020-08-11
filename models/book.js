@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const Book = sequelize.define("Book", {
+  const Book = sequelize.define("book", {
     book_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Book.associate = function (models) {
 
-    Book.belongsTo(models.Language, {
+    Book.belongsTo(models.language, {
       foreignKey: {
         allowNull: false
       }

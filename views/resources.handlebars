@@ -6,63 +6,45 @@
       <!-- Navbar -->
       {{> navbar user = name  }}
 
-      <h2 class="font-bold text-2xl"></h2>
       <div class="mt-12 text-left ml-8">
         <h3 class="text-pink font-bold text-xl">Videos</h3>
         <div class="news flex flex-wrap justify-center">
-          {{video}}
+          {{#each data.videos}}
+            <div class="mt-8 mx-4 lg:w-1/3 md:1/2 w-full p-5 bg-white rounded max-w-xs shadow-lg select-none overflow-hidden hover:shadow-2xl">
+              <iframe class="mx-auto" width="280" height="200" src="{{this.video_link}}"
+                      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+              <p class="text-gray-700 mb-2 text-pink mt-2">{{this.video_name}}</p>
+              <a href="#" class="font-semibold mb-1 text-gray-800 text-sm mt-5">{{this.video_channel}}</a>
+            </div>
+          {{/each}}
         </div>
       </div>
       <div class="mt-12 text-left ml-8">
         <h3 class="text-orange font-bold text-xl">Courses</h3>
         <div class="news flex flex-wrap justify-center">
-          <div
-                  class="mt-8 mx-4 lg:w-1/3 md:1/2 w-full p-5 bg-white rounded max-w-xs shadow-lg select-none overflow-hidden hover:shadow-2xl">
-            <img class="h-56 mx-auto" src="codecademy-logo.png" alt="">
-            <p class="text-gray-700 mb-2 text-orange mt-2 text-sm">Create a back-end app with JavaScript</p>
-            <a href="https://www.codecademy.com/learn/paths/create-a-back-end-app-with-javascript"
-               class="font-semibold mb-1 text-gray-800 text-sm mt-5">CODECADEMY</a>
+        {{#each data.courses}}
+          <div class="mt-8 mx-4 lg:w-1/3 md:1/2 w-full p-5 bg-white rounded max-w-xs shadow-lg select-none overflow-hidden hover:shadow-2xl">
+            <img class="h-48 mx-auto" src="{{this.course_path}}" alt="">
+            <p class="text-gray-700 mb-2 text-orange mt-2 text-sm">{{this.course_name}}</p>
+            <a href="{{this.course_link}}"
+               class="font-semibold mb-1 text-gray-800 text-sm mt-5">{{this.company_name}}</a>
           </div>
-          <div
-                  class="mt-8 mx-4 lg:w-1/3 md:1/2 w-full p-5 bg-white rounded max-w-xs shadow-lg select-none overflow-hidden hover:shadow-2xl">
-            <img class="h-56 mx-auto" src="codecademy-logo.png" alt="">
-            <p class="text-gray-700 mb-2 text-orange mt-2 text-sm">Create a back-end app with JavaScript</p>
-            <a href="https://www.codecademy.com/learn/paths/create-a-back-end-app-with-javascript"
-               class="font-semibold mb-1 text-gray-800 text-sm mt-5">CODECADEMY</a>
-          </div>
-          <div
-                  class="mt-8 mx-4 lg:w-1/3 md:1/2 w-full p-5 bg-white rounded max-w-xs shadow-lg select-none overflow-hidden hover:shadow-2xl">
-            <img class="h-56 mx-auto" src="codecademy-logo.png" alt="">
-            <p class="text-gray-700 mb-2 text-orange mt-2 text-sm">Create a back-end app with JavaScript</p>
-            <a href="https://www.codecademy.com/learn/paths/create-a-back-end-app-with-javascript"
-               class="font-semibold mb-1 text-gray-800 text-sm mt-5">CODECADEMY</a>
-          </div>
+        {{/each}}
         </div>
       </div>
       <div class="mt-12 text-left ml-8">
         <h3 class="text-blue font-bold text-xl">Books</h3>
         <div class="news flex flex-wrap justify-center">
+          {{#each data.books}}
           <div
                   class="mt-8 mx-4 lg:w-1/3 md:1/2 w-full p-5 bg-white rounded max-w-xs shadow-lg select-none overflow-hidden hover:shadow-2xl">
-            <img class="h-64 mx-auto" src="javascript-ninja.jpg" alt="">
-            <p class="text-gray-700 mb-2 text-blue mt-2 text-sm">Secrets of the JavaScript Ninja</p>
-            <a href="https://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X"
+            <img class="h-64 mx-auto" src="{{this.book_img}}" alt="">
+            <p class="text-gray-700 mb-2 text-blue mt-2 text-sm">{{this.book_name}}</p>
+            <a href="{{this.store_url}}"
                class="font-semibold mb-1 text-gray-800 text-sm mt-5">BUY IT</a>
           </div>
-          <div
-                  class="mt-8 mx-4 lg:w-1/3 md:1/2 w-full p-5 bg-white rounded max-w-xs shadow-lg select-none overflow-hidden hover:shadow-2xl">
-            <img class="h-64 mx-auto" src="javascript-ninja.jpg" alt="">
-            <p class="text-gray-700 mb-2 text-blue mt-2 text-sm">Secrets of the JavaScript Ninja</p>
-            <a href="https://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X"
-               class="font-semibold mb-1 text-gray-800 text-sm mt-5">BUY IT</a>
-          </div>
-          <div
-                  class="mt-8 mx-4 lg:w-1/3 md:1/2 w-full p-5 bg-white rounded max-w-xs shadow-lg select-none overflow-hidden hover:shadow-2xl">
-            <img class="h-64 mx-auto" src="javascript-ninja.jpg" alt="">
-            <p class="text-gray-700 mb-2 text-blue mt-2 text-sm">Secrets of the JavaScript Ninja</p>
-            <a href="https://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X"
-               class="font-semibold mb-1 text-gray-800 text-sm mt-5">BUY IT</a>
-          </div>
+          {{/each}}
         </div>
       </div>
     </div>
