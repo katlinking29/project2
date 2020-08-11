@@ -1,4 +1,5 @@
 const db = require("../models");
+const { resolveConfig } = require("prettier");
 
 module.exports = function(app) {
   // Find all events and return them to the user with res.json
@@ -32,6 +33,15 @@ module.exports = function(app) {
       res.redirect("/users");
       res.json(dbEvent);
     });
+  });
+
+  app.get("/events", (req, res) => {
+    console.log(req)
+    const handlebarsObject = {
+      eventName: req.name,
+      eventDate: req.date
+    };
+    res.render("events", { handlebarsObject });
   });
 
   app.delete("/api/events/:id", (req, res) => {
